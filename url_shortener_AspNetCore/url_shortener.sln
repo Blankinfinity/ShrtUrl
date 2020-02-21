@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "url_shortener_AspNetCore", "url_shortener_AspNetCore\url_shortener_AspNetCore.csproj", "{1337A149-3DB4-4145-8261-88EFA268F9DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortenerLib", "UrlShortener\UrlShortenerLib.csproj", "{96810430-1FDA-493E-ACD0-735920808F6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1337A149-3DB4-4145-8261-88EFA268F9DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1337A149-3DB4-4145-8261-88EFA268F9DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1337A149-3DB4-4145-8261-88EFA268F9DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1337A149-3DB4-4145-8261-88EFA268F9DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96810430-1FDA-493E-ACD0-735920808F6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96810430-1FDA-493E-ACD0-735920808F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96810430-1FDA-493E-ACD0-735920808F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96810430-1FDA-493E-ACD0-735920808F6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0847FA7-CB33-4BE1-92CA-F448B263EEEA}
+	EndGlobalSection
+EndGlobal

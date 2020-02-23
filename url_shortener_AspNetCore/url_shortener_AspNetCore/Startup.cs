@@ -61,7 +61,7 @@ namespace url_shortener_AspNetCore
 
                 // Have to ignore api urls here as otherwise we coulgn't get the correct response.
                 // There must be a better way to ignore api calls though
-                if (context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value) && !context.Request.Path.Value.StartsWith("/api/"))
+                if (context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value) && !context.Request.Path.Value.StartsWith("/api/") && !context.Request.Path.Value.StartsWith("/url/"))
                 {
                     context.Request.Path = "/index.html"; // Put your Angular root page here 
                     await next();

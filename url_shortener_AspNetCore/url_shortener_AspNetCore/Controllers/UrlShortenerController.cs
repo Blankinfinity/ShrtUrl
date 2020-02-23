@@ -9,7 +9,7 @@ using UrlShortenerLib;
 
 namespace url_shortener_AspNetCore.Controllers
 {
-    [Route("api/[controller]")]
+
     public class UrlShortenerController : Controller
     {
         private readonly IShortenUrlService _service;
@@ -19,8 +19,9 @@ namespace url_shortener_AspNetCore.Controllers
             _service = service;
         }
 
+        [Route("api/[controller]")]
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        // [ValidateAntiForgeryToken]
         public IActionResult Create([FromBody] string originalUrl)
         {
             var shortUrl = new ShortenedUrl
@@ -34,11 +35,13 @@ namespace url_shortener_AspNetCore.Controllers
                 _service.Save(shortUrl);
             }
 
-            return Ok(ShortUrlHelper.Encode(shortUrl.Id));
+            var returnedUrl = ShortUrlHelper.Encode(shortUrl.Id);
+            return Ok("http://shrturl.keith-pearce.co.uk/url/" + returnedUrl);
         }
 
-        [HttpGet("/ShortUrls/RedirectTo/{path:required}", Name = "ShortUrls_RedirectTo")]
-        public IActionResult RedirectTo(string path)
+        [HttpGet]
+        [Route("url/{path}")]
+        public IActionResult RedirectTo([FromRoute] string path)
         {
             if (path == null)
             {

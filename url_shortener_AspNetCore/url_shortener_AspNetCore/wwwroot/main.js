@@ -36,10 +36,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 
 
 
-var routes = [];
+
+var routes = [
+    { path: '', component: _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], pathMatch: 'full' },
+];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
@@ -133,6 +137,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _services_shrt_url_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./services/shrt-url.service */ "./src/app/services/shrt-url.service.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _redirect_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./redirect.component */ "./src/app/redirect.component.ts");
+
 
 
 
@@ -154,7 +160,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
                 _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_6__["NavbarComponent"],
-                _shortener_form_shortener_form_component__WEBPACK_IMPORTED_MODULE_9__["ShortenerFormComponent"]
+                _shortener_form_shortener_form_component__WEBPACK_IMPORTED_MODULE_9__["ShortenerFormComponent"],
+                _redirect_component__WEBPACK_IMPORTED_MODULE_13__["RedirectComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -261,6 +268,49 @@ var NavbarComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/redirect.component.ts":
+/*!***************************************!*\
+  !*** ./src/app/redirect.component.ts ***!
+  \***************************************/
+/*! exports provided: RedirectComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RedirectComponent", function() { return RedirectComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_shrt_url_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/shrt-url.service */ "./src/app/services/shrt-url.service.ts");
+
+
+
+
+var RedirectComponent = /** @class */ (function () {
+    function RedirectComponent(route, shrtUrlService, router) {
+        var _this = this;
+        this.route = route;
+        this.shrtUrlService = shrtUrlService;
+        this.router = router;
+        this.route.params.subscribe(function (params) {
+            _this.shrtUrlService.getLink(params.shortUrl).subscribe(function (x) {
+                window.location.href = x;
+            });
+        });
+    }
+    RedirectComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            template: '<h1>Redirecting...</h1>'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _services_shrt_url_service__WEBPACK_IMPORTED_MODULE_3__["ShrtUrlservice"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    ], RedirectComponent);
+    return RedirectComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/shrt-url.service.ts":
 /*!**********************************************!*\
   !*** ./src/app/services/shrt-url.service.ts ***!
@@ -284,8 +334,17 @@ var ShrtUrlservice = /** @class */ (function () {
         this.httpClient = httpClient;
     }
     ShrtUrlservice.prototype.createShrtUrl = function (originalUrl) {
-        return this.httpClient.post('api/urlshortener', originalUrl).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+            'Content-Type': 'application/json'
+        });
+        return this.httpClient.post('api/urlshortener', JSON.stringify(originalUrl), { headers: headers })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
             return response;
+        }));
+    };
+    ShrtUrlservice.prototype.getLink = function (shortUrl) {
+        return this.httpClient.get('api/urlshortener/' + shortUrl).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (x) {
+            return x;
         }));
     };
     ShrtUrlservice = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([

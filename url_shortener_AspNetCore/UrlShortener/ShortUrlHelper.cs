@@ -12,13 +12,16 @@ namespace UrlShortenerLib
 
         public static string Encode(int num)
         {
-            var sb = new StringBuilder();
+            if (num == 0)
+                return Alphabet[0].ToString();
+            var s = string.Empty;
             while (num > 0)
             {
-                sb.Insert(0, Alphabet.ElementAt(num % Base));
+                s += Alphabet[num % Base];
                 num = num / Base;
             }
-            return sb.ToString();
+
+            return string.Join(string.Empty, s.Reverse());
         }
 
         public static int Decode(string str)

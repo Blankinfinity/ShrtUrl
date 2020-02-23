@@ -11,12 +11,14 @@ import { ShortenerFormComponent } from './shortener-form/shortener-form.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { ShrtUrlservice } from './services/shrt-url.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RedirectComponent } from './redirect.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ShortenerFormComponent
+    ShortenerFormComponent,
+    RedirectComponent
   ],
   imports: [
     BrowserModule,

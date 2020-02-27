@@ -1,6 +1,6 @@
 ﻿using System.Web.UI;
 
-namespace url_shortener_WebForms.App_Start
+namespace url_shortener_WebForms
 {
     public static class ScriptMapping
     {

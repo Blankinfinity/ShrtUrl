@@ -11,7 +11,8 @@ var validatiorOptions = {
     return true;
   }
 
-}
+};
+
 function SetPopText(text) {
   $('#url_text').attr('data-content', text);
 }
@@ -27,7 +28,7 @@ $(document).ready(function () {
   });
 
 
-  pop.popover(effect);
+  pop.popover('show');
 });
 
 function Validation() {
@@ -47,13 +48,13 @@ function Validation() {
 }
 function AjaxUpdate(text) {
 
-  ShortUrl.Services.Processing.AddNew(text, OnComplete, OnError);
+  url_shortener_WebForms.Services.Processing.AddNew(text, OnComplete, OnError);
 
   function OnError(error) {
     alert(error.get_message);
   }
   function OnComplete(result) {
-    if (result.Success == false) {
+    if (result.Success === false) {
       SetPopText(result.Data);
       pop.popover('show');
     }

@@ -14,7 +14,7 @@ namespace url_shortener_WebForms
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            ScriptMapping.AddDefinitions();
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }

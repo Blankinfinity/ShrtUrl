@@ -11,6 +11,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <UserSecretsId>d6b1bf3c-72b2-4563-baff-b0a128d13930</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

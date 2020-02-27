@@ -24,19 +24,26 @@ namespace url_shortener_AspNetCore.Controllers
         // [ValidateAntiForgeryToken]
         public IActionResult Create([FromBody] string originalUrl)
         {
-            var shortUrl = new ShortenedUrl
+            if (UrlValidation.IsValidUrl(originalUrl))
             {
-                OriginalUrl = originalUrl
-            };
+                var shortUrl = new ShortenedUrl
+                {
+                    OriginalUrl = originalUrl
+                };
 
-            TryValidateModel(shortUrl);
-            if (ModelState.IsValid)
-            {
-                _service.Save(shortUrl);
+                TryValidateModel(shortUrl);
+                if (ModelState.IsValid)
+                {
+                    _service.Save(shortUrl);
+                }
+
+                var returnedUrl = ShortUrlHelper.Encode(shortUrl.Id);
+                return Ok("http://shrturl.keith-pearce.co.uk/url/" + returnedUrl); 
             }
-
-            var returnedUrl = ShortUrlHelper.Encode(shortUrl.Id);
-            return Ok("http://shrturl.keith-pearce.co.uk/url/" + returnedUrl);
+            else
+            {
+                return BadRequest("Please enter a valid URL");
+            }
         }
 
         [HttpGet]

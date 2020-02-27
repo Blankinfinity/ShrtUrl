@@ -365,7 +365,7 @@ var ShrtUrlservice = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"addressForm\" novalidate (ngSubmit)=\"onSubmit()\" layout layout-align=\"center\">\n  <mat-card class=\"shipping-card\">\n    <mat-card-header style=\"justify-content: center;\">\n      Finding it difficult to remember a URL?\n    </mat-card-header>\n    <mat-card-content>\n      <div layout=\"row\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <input matInput placeholder=\"Paste a link below to shorten it.\" formControlName=\"url\" type=\"url\">\n            <button class=\"suffix-button\" mat-raised-button color=\"primary\" type=\"submit\" matSuffix>Submit</button>\n            <mat-error *ngIf=\"addressForm.controls['url'].hasError('required')\">\n              A url is required to submit <strong>required</strong>\n            </mat-error>\n          </mat-form-field>      \n      </div>\n    </mat-card-content>\n  </mat-card>\n</form>\n"
+module.exports = "<form [formGroup]=\"addressForm\" novalidate (ngSubmit)=\"onSubmit()\" layout layout-align=\"center\">\n  <mat-card class=\"card\">\n    <mat-card-header style=\"justify-content: center;\">\n      Finding it difficult to remember a URL?\n    </mat-card-header>\n    <mat-card-content>\n      <div layout=\"row\">\n          <mat-form-field class=\"full-width\" appearance=\"outline\">\n            <input matInput placeholder=\"Paste a link below to shorten it.\" formControlName=\"url\" type=\"url\">\n            <button class=\"suffix-button\" mat-raised-button color=\"primary\" type=\"submit\" matSuffix>Submit</button>\n            <mat-error *ngIf=\"addressForm.controls['url'].hasError('required')\">\n              A url is required to submit <strong>required</strong>\n            </mat-error>\n          </mat-form-field>      \n      </div>\n    </mat-card-content>\n  </mat-card>\n</form>\n\n<mat-card *ngIf=\"!shrturl==''\" class=\"card\">\n  <mat-card-title style=\"text-align: center;\">✔ Successfully Created Short Url</mat-card-title>\n  <mat-card-content style=\"margin-top:20px;text-align: center;\">\n    <p>You new short url is as follows:</p>\n    <a href=\"{{shrturl}}\">{{shrturl}}</a>\n    <p>This url will be valid for 90 days.</p>\n  </mat-card-content>\n</mat-card>\n"
 
 /***/ }),
 
@@ -376,7 +376,7 @@ module.exports = "<form [formGroup]=\"addressForm\" novalidate (ngSubmit)=\"onSu
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".full-width {\n  width: 100%; }\n\n.shipping-card {\n  min-width: 120px;\n  max-width: 600px;\n  margin: 20px auto; }\n\n.suffix-button {\n  top: -8px !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hvcnRlbmVyLWZvcm0vRDpcXF9HaXRIdWJDb2RlXFxrcF91cmxfc2hvcnRlbmVyXFx1cmxfc2hvcnRlbmVyX0FzcE5ldENvcmVcXHVybF9zaG9ydGVuZXJfQXNwTmV0Q29yZVxcQ2xpZW50QXBwL3NyY1xcYXBwXFxzaG9ydGVuZXItZm9ybVxcc2hvcnRlbmVyLWZvcm0uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFXLEVBQUE7O0FBR2I7RUFDRSxnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLGlCQUFpQixFQUFBOztBQUluQjtFQUNFLG9CQUFvQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvc2hvcnRlbmVyLWZvcm0vc2hvcnRlbmVyLWZvcm0uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZnVsbC13aWR0aCB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uc2hpcHBpbmctY2FyZCB7XG4gIG1pbi13aWR0aDogMTIwcHg7XG4gIG1heC13aWR0aDogNjAwcHg7XG4gIG1hcmdpbjogMjBweCBhdXRvO1xuICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiBtaWRuaWdodGJsdWU7XG59XG5cbi5zdWZmaXgtYnV0dG9uIHtcbiAgdG9wOiAtOHB4ICFpbXBvcnRhbnQ7XG59XG4iXX0= */"
+module.exports = ".full-width {\n  width: 100%; }\n\n.card {\n  min-width: 120px;\n  max-width: 600px;\n  margin: 20px auto; }\n\n:host .mat-card-header-text {\n  margin: auto; }\n\n.suffix-button {\n  top: -8px !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hvcnRlbmVyLWZvcm0vRDpcXF9HaXRIdWJDb2RlXFxrcF91cmxfc2hvcnRlbmVyXFx1cmxfc2hvcnRlbmVyX0FzcE5ldENvcmVcXHVybF9zaG9ydGVuZXJfQXNwTmV0Q29yZVxcQ2xpZW50QXBwL3NyY1xcYXBwXFxzaG9ydGVuZXItZm9ybVxcc2hvcnRlbmVyLWZvcm0uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFXLEVBQUE7O0FBR2I7RUFDRSxnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLGlCQUFpQixFQUFBOztBQUluQjtFQUNFLFlBQVksRUFBQTs7QUFHZDtFQUNFLG9CQUFvQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvc2hvcnRlbmVyLWZvcm0vc2hvcnRlbmVyLWZvcm0uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZnVsbC13aWR0aCB7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4uY2FyZCB7XG4gIG1pbi13aWR0aDogMTIwcHg7XG4gIG1heC13aWR0aDogNjAwcHg7XG4gIG1hcmdpbjogMjBweCBhdXRvO1xuICAvLyBiYWNrZ3JvdW5kLWNvbG9yOiBtaWRuaWdodGJsdWU7XG59XG5cbjpob3N0IC5tYXQtY2FyZC1oZWFkZXItdGV4dCB7XG4gIG1hcmdpbjogYXV0bztcbn1cblxuLnN1ZmZpeC1idXR0b24ge1xuICB0b3A6IC04cHggIWltcG9ydGFudDtcbn1cbiJdfQ== */"
 
 /***/ }),
 
@@ -405,9 +405,12 @@ var ShortenerFormComponent = /** @class */ (function () {
         this.addressForm = this.fb.group({
             url: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
         });
+        this.shrturl = '';
     }
     ShortenerFormComponent.prototype.onSubmit = function () {
+        var _this = this;
         this.shrtUrlService.createShrtUrl(this.addressForm.get('url').value).subscribe(function (x) {
+            _this.shrturl = x;
             console.log(x);
         });
     };

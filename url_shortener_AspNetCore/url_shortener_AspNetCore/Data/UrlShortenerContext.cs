@@ -18,7 +18,7 @@ namespace url_shortener_AspNetCore.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ShortenedUrl>().ToTable("OrignalUrl");
+            modelBuilder.Entity<ShortenedUrl>().ToTable("OrignalUrl").Property(url => url.DateCreated).HasDefaultValueSql("getdate()");
         }
     }
 }

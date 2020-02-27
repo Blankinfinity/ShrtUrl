@@ -9,7 +9,7 @@ using UrlShortenerLib;
 
 namespace url_shortener_AspNetCore.Controllers
 {
-
+    [Produces("application/json")]
     public class UrlShortenerController : Controller
     {
         private readonly IShortenUrlService _service;

@@ -2,11 +2,15 @@
   width: 100%;
 }
 
-.shipping-card {
+.card {
   min-width: 120px;
   max-width: 600px;
   margin: 20px auto;
   // background-color: midnightblue;
+}
+
+:host .mat-card-header-text {
+  margin: auto;
 }
 
 .suffix-button {

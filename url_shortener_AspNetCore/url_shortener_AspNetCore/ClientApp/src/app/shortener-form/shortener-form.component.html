@@ -1,5 +1,5 @@
 <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()" layout layout-align="center">
-  <mat-card class="shipping-card">
+  <mat-card class="card">
     <mat-card-header style="justify-content: center;">
       Finding it difficult to remember a URL?
     </mat-card-header>
@@ -16,3 +16,12 @@
     </mat-card-content>
   </mat-card>
 </form>
+
+<mat-card *ngIf="!shrturl==''" class="card">
+  <mat-card-title style="text-align: center;">✔ Successfully Created Short Url</mat-card-title>
+  <mat-card-content style="margin-top:20px;text-align: center;">
+    <p>You new short url is as follows:</p>
+    <a href="{{shrturl}}">{{shrturl}}</a>
+    <p>This url will be valid for 90 days.</p>
+  </mat-card-content>
+</mat-card>

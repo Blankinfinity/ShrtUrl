@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ShrtUrlservice } from '../services/shrt-url.service';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-shortener-form',
@@ -13,10 +12,13 @@ export class ShortenerFormComponent {
     url: [null, Validators.required]
   });
 
+  shrturl = '';
+
   constructor(private fb: FormBuilder, private shrtUrlService: ShrtUrlservice) {}
 
   onSubmit() {
     this.shrtUrlService.createShrtUrl(this.addressForm.get('url').value).subscribe(x => {
+      this.shrturl = x;
       console.log(x);
     });
   }

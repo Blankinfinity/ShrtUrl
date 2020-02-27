@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace url_shortener_AspNetCore.Models
 {
@@ -8,5 +10,6 @@ namespace url_shortener_AspNetCore.Models
 
         [Required]
         public string OriginalUrl { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 }

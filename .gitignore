@@ -348,3 +348,32 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/url_shortener_AspNetCore/url_shortener_WebForms/Content/main.css
+/url_shortener_AspNetCore/url_shortener_WebForms/Content/bootstrap.min.css.map
+/url_shortener_AspNetCore/url_shortener_WebForms/Content/bootstrap.min.css
+/url_shortener_AspNetCore/url_shortener_WebForms/Content/bootstrap.css.map
+/url_shortener_AspNetCore/url_shortener_WebForms/Content/bootstrap.css
+/url_shortener_AspNetCore/url_shortener_WebForms/Content/bootstrap-theme.min.css.map
+/url_shortener_AspNetCore/url_shortener_WebForms/Content/bootstrap-theme.min.css
+/url_shortener_AspNetCore/url_shortener_WebForms/Content/bootstrap-theme.css.map
+/url_shortener_AspNetCore/url_shortener_WebForms/Content/bootstrap-theme.css
+/url_shortener_AspNetCore/url_shortener_WebForms/fonts/glyphicons-halflings-regular.woff2
+/url_shortener_AspNetCore/url_shortener_WebForms/fonts/glyphicons-halflings-regular.woff
+/url_shortener_AspNetCore/url_shortener_WebForms/fonts/glyphicons-halflings-regular.ttf
+/url_shortener_AspNetCore/url_shortener_WebForms/fonts/glyphicons-halflings-regular.svg
+/url_shortener_AspNetCore/url_shortener_WebForms/fonts/glyphicons-halflings-regular.eot
+/url_shortener_AspNetCore/url_shortener_WebForms/Scripts/bootstrap.min.js
+/url_shortener_AspNetCore/url_shortener_WebForms/Scripts/bootstrap.js
+/url_shortener_AspNetCore/url_shortener_WebForms/Scripts/modernizr-2.8.3.js
+/url_shortener_AspNetCore/url_shortener_WebForms/Scripts/jquery.validate.unobtrusive.min.js
+/url_shortener_AspNetCore/url_shortener_WebForms/Scripts/jquery.validate.unobtrusive.js
+/url_shortener_AspNetCore/url_shortener_WebForms/Scripts/jquery.validate.min.js
+/url_shortener_AspNetCore/url_shortener_WebForms/Scripts/jquery.validate.js
+/url_shortener_AspNetCore/url_shortener_WebForms/Scripts/jquery.validate-vsdoc.js
+/url_shortener_AspNetCore/url_shortener_WebForms/Scripts/jquery-3.4.1.slim.min.map
+/url_shortener_AspNetCore/url_shortener_WebForms/Scripts/jquery-3.4.1.slim.min.js
+/url_shortener_AspNetCore/url_shortener_WebForms/Scripts/jquery-3.4.1.slim.js
+/url_shortener_AspNetCore/url_shortener_WebForms/Scripts/jquery-3.4.1.min.map
+/url_shortener_AspNetCore/url_shortener_WebForms/Scripts/jquery-3.4.1.min.js
+/url_shortener_AspNetCore/url_shortener_WebForms/Scripts/jquery-3.4.1.js
+/url_shortener_AspNetCore/url_shortener_WebForms/Scripts/jquery-3.4.1.intellisense.js

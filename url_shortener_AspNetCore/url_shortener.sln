@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "url_shortener_AspNetCore", "url_shortener_AspNetCore\url_shortener_AspNetCore.csproj", "{1337A149-3DB4-4145-8261-88EFA268F9DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortenerLib", "UrlShortener\UrlShortenerLib.csproj", "{96810430-1FDA-493E-ACD0-735920808F6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UrlShortenerLib", "UrlShortener\UrlShortenerLib.csproj", "{96810430-1FDA-493E-ACD0-735920808F6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "url_shortener_WebForms", "url_shortener_WebForms\url_shortener_WebForms.csproj", "{1F8BF55A-C75D-49C2-9CE7-DDD3C014D7E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{96810430-1FDA-493E-ACD0-735920808F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96810430-1FDA-493E-ACD0-735920808F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96810430-1FDA-493E-ACD0-735920808F6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8BF55A-C75D-49C2-9CE7-DDD3C014D7E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8BF55A-C75D-49C2-9CE7-DDD3C014D7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8BF55A-C75D-49C2-9CE7-DDD3C014D7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8BF55A-C75D-49C2-9CE7-DDD3C014D7E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
